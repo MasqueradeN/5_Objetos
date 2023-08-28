@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <random>
+#include "ofMain.h"
 //#include "StringArray.h"
 
 class Entity
@@ -14,6 +15,7 @@ public:
 	const char* toString();
 
 	float posx, posy;
+	ofVec2f* velocity;
 
 	void draw();
 };

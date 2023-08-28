@@ -5,6 +5,7 @@ Entity::Entity()
 {
 	name = "xd";
 	health = 0;
+	velocity = new ofVec2f(0, 0);
 }
 
 const char* Entity::toString()
@@ -15,5 +16,5 @@ const char* Entity::toString()
 void Entity::draw()
 {
 	ofSetColor(ofColor::chartreuse);
-	ofCircle(posx, posy, 25);
+	ofDrawCircle(posx, posy, 25);
 }

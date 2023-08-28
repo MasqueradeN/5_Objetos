@@ -2,13 +2,19 @@
 
 #include "ofMain.h"
 #include <vector>
+#include <list>
 #include "Entity.h"
+#include "ofxGui.h"
 
 class ofApp : public ofBaseApp{
 
 	public:
 		void setup();
+		void setupBalls();
+		void setupLemmin();
 		void update();
+		void updateBalls();
+		void updateLemmin();
 		void draw();
 
 		void keyPressed(int key);
@@ -29,4 +35,23 @@ class ofApp : public ofBaseApp{
 		float radioCirculo;
 
 		std::vector<Entity> gameObjects;
+
+		void onBtn1Pressed();
+		void onBtn2Pressed();
+
+		enum EAppState
+		{
+			menu, balls, lemin, max
+		} appstate;
+
+		ofxPanel mainMenu;
+		ofxButton btnEjercicio1, btnEjercicio2;
+		ofImage playerSprite;
+		ofVec2f playerSize;
+		ofVec2f playerSpriteOffset;
+
+		bool w, a, s, d;
+
+		std::list<Entity> inventory;
+		Entity* currItem;
 };
