@@ -33,25 +33,38 @@ class ofApp : public ofBaseApp{
 		float posY;
 
 		float radioCirculo;
+		float poisonPosX, poisonPosY;
 
 		std::vector<Entity> gameObjects;
+		std::vector<Entity> items;
 
 		void onBtn1Pressed();
 		void onBtn2Pressed();
 
 		enum EAppState
 		{
-			menu, balls, lemin, max
+			menu, balls, lemin
 		} appstate;
 
 		ofxPanel mainMenu;
 		ofxButton btnEjercicio1, btnEjercicio2;
 		ofImage playerSprite;
+		ofImage poissonGrab;
+		ofImage backGround;
 		ofVec2f playerSize;
 		ofVec2f playerSpriteOffset;
+		ofTrueTypeFont titleFont;
+		ofTrueTypeFont uiFont;
 
-		bool w, a, s, d;
+		std::vector<ofColor> colors;
+		ofColor trasnparent;
+
+		bool w, a, s, d, poisonHand;
 
 		std::list<Entity> inventory;
 		Entity* currItem;
+
+		void NextItem();
+		void PrevItem();
+		std::list<Entity>::iterator invIterator;
 };

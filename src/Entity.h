@@ -10,14 +10,20 @@ public:
 	std::string name;
 	int health;
 
+	ofColor color;
+
 	Entity();
 
 	const char* toString();
 
 	float posx, posy;
 	ofVec2f* velocity;
+	ofImage entitySprite;
 
 	void draw();
+
+	ofColor setColor(ofColor _color);
+	void setSprite(std::string _sprite);
 };
 
 //template<>

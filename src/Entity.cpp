@@ -15,6 +15,17 @@ const char* Entity::toString()
 
 void Entity::draw()
 {
-	ofSetColor(ofColor::chartreuse);
-	ofDrawCircle(posx, posy, 25);
+	ofSetColor(setColor(color));
+	ofDrawCircle(posx, posy, 15);
+}
+
+ofColor Entity::setColor(ofColor _color)
+{
+	color = _color;
+	return _color;
+}
+
+void Entity::setSprite(std::string _sprite)
+{
+	entitySprite.load(_sprite);
 }
