@@ -40,6 +40,8 @@ void ofApp::setupLemmin()
 	trasnparent = ofColor(0, 0, 0);
 	playerSprite.load("ese mi sprite.png");
 	poissonGrab.load("Le poisson.jpg");
+	swordGrab.load("Enmawhaki.jpg");
+	shieldGrab.load("le shil.png");
 	playerSize = ofVec2f(26, 48);
 	playerSpriteOffset = ofVec2f(12, 0);
 	Entity hands = Entity();
@@ -159,6 +161,14 @@ void ofApp::draw()
 		if (poisonHand && invIterator == --inventory.end())
 		{
 			poissonGrab.draw(posX - 10, posY + 10);
+		}
+		if (poisonHand == false && invIterator == --inventory.end() || poisonHand && invIterator == ----inventory.end())
+		{
+			shieldGrab.draw(posX - 10, posY + 10);
+		}
+		if (invIterator == ++inventory.begin())
+		{
+			swordGrab.draw(posX - 10, posY + 10);
 		}
 
 		for (int i = 0; i < gameObjects.size(); i++)

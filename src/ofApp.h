@@ -49,7 +49,7 @@ class ofApp : public ofBaseApp{
 		ofxPanel mainMenu;
 		ofxButton btnEjercicio1, btnEjercicio2;
 		ofImage playerSprite;
-		ofImage poissonGrab;
+		ofImage poissonGrab, swordGrab, shieldGrab;
 		ofImage backGround;
 		ofVec2f playerSize;
 		ofVec2f playerSpriteOffset;
